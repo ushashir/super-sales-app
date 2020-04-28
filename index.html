@@ -8,13 +8,34 @@
 <body>
 <br>
 <div class="container">
-   <div class="col-md-4">
+ 
     <h6>NAWILL SUPER MARKET</h6>
     <small>8, Morris Street. Yaba <br>Lagos Nigeria <br>08165593275</small>
     <br><br>
 
     <h4>SALES INVOICE</h4>
+
+    <br>
+    <p>Enter Details of transaction here</p>
+    <!-- Sales input form -->
+    <form>
+        <div class="form-row">
+          <div class="col-md-3">
+            <input id="item" type="text" class="form-control" placeholder="Item">
+          </div>
+          <div class="col-md-1">
+            <input id="qty" type="number" class="form-control" placeholder="Qty">
+          </div>
+          <div class="col-md-2">
+            <input id="amount" type="number" class="form-control" placeholder="Amount">
+          </div>
+        </div>
+      </form>
+
+    <button id="add-item">Add Item</button>
     
+    <hr>
+      
     <table>
         <tr>
           <th>SN</th>
@@ -22,77 +43,23 @@
           <th>QTY</th>
           <th>PRICE (N)</th>
         </tr>
+       
+    
         <tr>
-          <td>1</td>
-          <td>Tissue Paper row</td>
-          <td>3</td>
-          <td>N500</td>
+        <td></td>
+        <td>Total AMOUNT</td>
+        <td></td>
+        <td>N500</td>
         </tr>
-        <tr>
-            <td>1</td>
-            <td>Tissue Paper row</td>
-            <td>3</td>
-            <td>N500</td>
-          </tr>
-          <tr>
-            <td></td>
-            <td>Total AMOUNT</td>
-            <td></td>
-            <td>N500</td>
-          </tr>
-       
-       
+        <!-- Insert item list here from JXS -->
+        <tbody id="item-list"></tbody>
+
       </table>
 
 
-    <ul class="right">
-        <li><a href="#" class="clear-btn btn blue lighten-3">Clear All</a></li>
-    </ul>
     <br>
     
-    <div class="container">
-        <!-- Form card div starts here -->
-        <div class="card">
-            <div class="card-content">
-                <span class="card-title">Add Meal / Food Item</span>
-                <form class="col">
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <input type="text" placeholder="Add Item" id="item-name">
-                            <label for="item-name">Meal</label>
-                        </div>
-                        <div class="input-field col s6">
-                            <input type="number" placeholder="Add Calories" id="item-calories">
-                            <label for="item-calories">Calories</label>
-                        </div>
-                        
-                            <botton class="add-btn btn blue darken-3"><i class="fa fa-plus"></i>Add Meal</botton>
-                            <botton class="update-btn btn blue orange"><i class="fa fa-pencil-square-o"></i>Update Meal</botton>
-                            <botton class="delete-btn btn blue red"><i class="fa fa-remove"></i>Delete</botton>
-                            <botton class="back-btn btn blue grey pull-right"><i class="fa fa-chevron-circle-left"></i>Back</botton>
-                    </div>
     
-                </form>
-            </div>
-            <!-- Calo9rie count -->
-            <h3 class="centre-align">Total Calories: <span class="total-calories">0</span></h3>
-            <!-- Item List -->
-            <ul id="item-list" class="collection">
-                <li class="collection-item" id="item-0"><strong>Steak Dinner: </strong> <em>1200 Calories</em>
-                    <a href="#" class="secondary-content"><i class="edit-item fa fa-pencil"></i></a>
-                </li>
-                <li class="collection-item" id="item-0"><strong>Cookie: </strong> <em>400 Calories</em>
-                     <a href="#" class="secondary-content"><i class="edit-item fa fa-pencil"></i></a>
-                </li>
-                <li class="collection-item" id="item-0"><strong>Eggs: </strong> <em>300 Calories</em>
-                     <a href="#" class="secondary-content"><i class="edit-item fa fa-pencil"></i></a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    
-   </div>
-
    <!-- footer -->
    <footer>Powered by <a href="#">Nawill IT Solutions</a></footer>
 </div>
@@ -100,15 +67,17 @@
 </body>
 </html> 
 
-
-
-
-
 <!-- CSS LINK -->
-<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/cdncloudfare.min.css">
+<link rel="stylesheet" href="css/boostrap4.0.min.css">
 <link rel="stylesheet" href="css/style.css">
 
 <!-- JS LINK -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
 <script src="js/script.js"></script>
 </body>
 </html>

@@ -1,9 +1,9 @@
-// Book Contructor
-function Book (sn, title, author, isbn){
+// Item Contructor
+function Item (sn, item, qty, price){
     this.sn = sn;
-    this.title = title;
-    this.author = author;
-    this.isbn = isbn;
+    this.item = item;
+    this.qty = qty;
+    this.price = price;
 }
 // UI Constructor
 function UI (){};
@@ -12,9 +12,9 @@ const list = document.getElementById('book-list');
 const row = document.createElement('tr'); // Create tr element
     row.innerHTML = `
         <td>${book.sn}</td>
-        <td>${book.title}</td>
-        <td>${book.author}</td>
-        <td>${book.isbn}</td>
+        <td>${book.item}</td>
+        <td>${book.qty}</td>
+        <td>${book.price}</td>
         <td><a href="#" class="delete">X</td>
     `;                                          //  Insert cols
 list.appendChild(row);
@@ -35,22 +35,22 @@ UI.prototype.showAlert = function (message, className) {
 // Clear fields
 UI.prototype.clearField = function(){
     document.getElementById('sn').value = '';
-    document.getElementById('title').value = '';
-    document.getElementById('author').value = '';
-    document.getElementById('isbn').value = '';
+    document.getElementById('item').value = '';
+    document.getElementById('qty').value = '';
+    document.getElementById('price').value = '';
 }
 // Event Listeners
 document.getElementById('book-form').addEventListener('submit', 
 function (e) {
     // Get form values
     const sn = document.getElementById('sn').value;
-    const title = document.getElementById('title').value;
-    const author = document.getElementById('author').value;
-    const isbn = document.getElementById('isbn').value;
+    const item = document.getElementById('item').value;
+    const qty = document.getElementById('qty').value;
+    const price = document.getElementById('price').value;
 
-const book = new Book (sn, title, author, isbn);  // Instanciate Book 
+const book = new Book (sn, item, qty, price);  // Instanciate Book 
 const ui = new UI();  // Instanciate UI
-if (sn === '' || title === '' || author === '' || isbn === '') { 
+if (sn === '' || item === '' || qty === '' || price === '') { 
    ui.showAlert('Please fill in all fields');
 } else {
     ui.addBookToList(book);  // Add book to list
