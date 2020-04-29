@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NAWILL SUPER MARKET APP</title>
+    <!-- CSS LINK -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton-framework/1.1.1/skeleton.min.css">
+<!-- <link rel="stylesheet" href="css/cdncloudfare.min.css"> -->
+<!-- <link rel="stylesheet" href="css/boostrap4.0.min.css"> -->
+<!-- <link rel="stylesheet" href="css/style.css"> -->
+
 </head>
 <body>
 <br>
 <div class="container">
  
     <h6>NAWILL SUPER MARKET</h6>
-    <small>8, Morris Street. Yaba <br>Lagos Nigeria <br>08165593275</small>
+    <small>8, Morris Street. Yaba. Lagos Nigeria.              08165593275</small>
     <br><br>
 
     <h4>SALES INVOICE</h4>
@@ -29,37 +35,35 @@
           <div class="col-md-2">
             <input id="amount" type="number" class="form-control" placeholder="Amount">
           </div>
+          <div>  
+            <input type="submit" value="submit" class="u-full-width ">
+        </div>
         </div>
       </form>
 
-    <button id="add-item">Add Item</button>
+    <!-- <button type="submit" value="submit">Add Item</button> -->
     
     <hr>
       
     <table>
         <tr>
-          <th>SN</th>
           <th>ITEM </th> 
           <th>QTY</th>
-          <th>PRICE (N)</th>
+          <th>AMOUNT (N)</th>
         </tr>
        
-    
-        <tr>
-        <td></td>
-        <td>Total AMOUNT</td>
-        <td></td>
-        <td>N500</td>
-        </tr>
         <!-- Insert item list here from JXS -->
         <tbody id="item-list"></tbody>
-
+        <!-- <tr>
+            <td></td>
+            <td>Total AMOUNT</td>
+            <td></td>
+            <td>N500</td>
+        </tr> -->
       </table>
 
 
-    <br>
-    
-    
+
    <!-- footer -->
    <footer>Powered by <a href="#">Nawill IT Solutions</a></footer>
 </div>
@@ -67,17 +71,7 @@
 </body>
 </html> 
 
-<!-- CSS LINK -->
-<link rel="stylesheet" href="css/cdncloudfare.min.css">
-<link rel="stylesheet" href="css/boostrap4.0.min.css">
-<link rel="stylesheet" href="css/style.css">
-
-<!-- JS LINK -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-
-<script src="js/script.js"></script>
+<!-- <script src="js/script.js"></script> -->
+<script src="js/app.js"></script>
 </body>
 </html>
