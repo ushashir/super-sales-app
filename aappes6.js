@@ -47,7 +47,48 @@ clearFields () {
     }
 };
 
-// Event Listeners for book entry
+// Local Storage
+class Store {
+    // Get sales
+    static getSales () {
+        let sales;
+        if (localStorage.getItem('sales') === null) {
+            sales = [];
+        } else {
+            sales = JSON.parse(localStorage.getItem('sales'));
+        }
+        return sales;
+    }
+    // display sales
+    static displaySales () {
+        const sales = Store.getSales();
+        sales.forEach(function(sale){
+            const ui = new UI;
+            ui.addSaleToList(sale);
+        })
+    }
+    // add sale
+    static  addSale (sale) {
+        const sales = Store.getSales();
+        sales.push(sale);
+        localStorage.setItem('sales', JSON.stringify(sales));
+    }
+    // Remove sale
+    static removeSale (amount) {
+        const sales = Store.getSales();
+        sales.forEach(function(sale, index){
+            if(sale.amount === amount) {
+                sales.splice(index, 1)
+            }
+        });
+        localStorage.setItem('sales', JSON.stringify(sales));
+    }
+}
+
+//  DOM load event
+document.addEventListener('DOMContentLoaded', Store.displaySales);
+
+// Event Listeners for sale entry
 document.getElementById('sales-entry').addEventListener('submit', 
 function (e) {
     // Get form values
@@ -62,6 +103,7 @@ if (item === '' || qty === '' || amount === '') {
    ui.showAlert('Please enter all fields', 'error');
 } else {
     ui.addSaleToList(sale);  // Add book to list
+    Store.addSale(sale) // Add to store
     ui.showAlert('Sale succesfully entered!', 'success'); // Show success
     ui.clearFields(); // Clear fields after submit
 }
@@ -73,6 +115,7 @@ if (item === '' || qty === '' || amount === '') {
 document.getElementById('sale-list').addEventListener('click', function(e){
     const ui = new UI() //Instantiate UI
     ui.deleteSale(e.target); //Detete target
+    Store.removeSale(e.target.parentElement.previousElementSibling.textContent); // Remove from Local storage
     ui.showAlert('Sale removed', 'success') // Show delete alert
     e.preventDefault();
 });
