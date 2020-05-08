@@ -1,4 +1,4 @@
-// Salel class
+// Sale class
 class Sale {
     constructor (item, qty, amount) {
         this.item = item;
@@ -7,8 +7,17 @@ class Sale {
     }
 };
 
+// SalesTota; class
+class Total {
+    constructor (qty, amount) {
+        this.qty = qty;
+        this.amount = amount;
+    }
+};
+
 // UI class
 class UI {
+    // Add Sale to List
     addSaleToList (sale) {
         const list = document.getElementById('sale-list');
     const row = document.createElement('tr'); // Create tr element
@@ -20,6 +29,20 @@ class UI {
     `;                                          //  Insert cols
     list.appendChild(row);
     };
+
+    // // Caculate total
+    // calculateTotalSales (sale) {
+    //     const list = document.getElementById('total-sales');
+    // const row = document.createElement('tr'); // Create tr element
+    // row.innerHTML = `
+    //     <td>'Total'</td>
+    //     <td></td>
+    //     <td>${sale.total}</td>
+        
+    // `;                                          //  Insert cols
+    // list.appendChild(row);
+    // };
+
 // Show alert 
 showAlert (message, className) {
         const div = document.createElement('div'); // Create div
@@ -94,10 +117,8 @@ function (e) {
     // Get form values
     const item = document.getElementById('item').value;
     const qty = document.getElementById('qty').value;
-    const amount = document.getElementById('amount').value;
-   
-const sale = new Sale (item, qty, amount);  // Instanciate Book 
-
+    const amount = document.getElementById('amount').value; 
+const sale = new Sale (item, qty, amount);  // Instanciate Sale
 const ui = new UI();  // Instanciate UI
 if (item === '' || qty === '' || amount === '') { 
    ui.showAlert('Please enter all fields', 'error');
@@ -107,9 +128,24 @@ if (item === '' || qty === '' || amount === '') {
     ui.showAlert('Sale succesfully entered!', 'success'); // Show success
     ui.clearFields(); // Clear fields after submit
 }
-
     e.preventDefault();
 });    
+
+// // Event Listener for calculation of total sales
+// document.getElementById('total-sales').addEventListener('submit', 
+// function (e) {
+//     // Get form values
+//     const qty = document.getElementById('qty').value;
+//     const amount = document.getElementById('amount').value; 
+   
+// const total = new Total (qty, amount);  // Instanciate Total
+// const ui = new UI();  // Instanciate UI
+// total.forEach() 
+//     ui.calculateTotalSales(total);  // Add total sales to list
+//     Store.addSale(total) // Add to store
+
+//     e.preventDefault();
+// });
 
 // Event listener for delete
 document.getElementById('sale-list').addEventListener('click', function(e){
